@@ -36,7 +36,7 @@
         <div class="work-card">
     <h3>スライム大戦争 (Processing)</h3>
     <p><strong>制作時期：</strong>2024年 冬（大学1年次 最終課題）</p>
-    <p><strong>使用技術：</strong>Java / Processing（Javaベースの視覚表現用環境）</p>
+    <p><strong>使用技術：</strong>Processing（Javaベースの視覚表現用環境）</p>
     
     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 10px 0;">
                 <iframe 
@@ -50,7 +50,7 @@
     <p>
         「にゃんこ大戦争」のゲームシステムを参考に制作した、横スクロール型のタワーディフェンスゲームです。
         自陣からスライムを召喚し、敵陣の耐久値をゼロにすることで勝利となります。
-        キャラクターのステータス管理、攻撃判定、資金のリソース管理など、ゲームの根幹となるシステムを実装しました。
+        キャラクターのステータス管理、攻撃判定、資金のリソース管理など、ゲームの根幹となるシステムをで実装しました。
     </p>
 
     <h4>工夫した点</h4>
@@ -71,14 +71,26 @@
 
     </div>
 
-    <div class="work-card">
+          <div class="work-card">
     <h3>書籍管理システム (Webアプリ)</h3>
     <p><strong>制作時期：</strong>2025年 3月（3日間 短期インターン）</p>
-    <p><strong>使用技術：</strong>Java (Spring Boot), MySQL, Spring Security, Thymeleaf</p>
+    <p><strong>使用技術：</strong>Java, MySQL</p>
+
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 10px 0;">
+                <iframe 
+                    src="https://www.youtube.com/embed/m4Nh_qM5ssE?si=QScyM_M5k-uyPvne" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
+                </iframe>
+            </div>
 
     <h4>プロジェクト概要</h4>
     <p>
-        「おすすめの書籍を共有する」既存のWebアプリに対し、ユーザーの利便性を高めるための機能拡張とUI改善をチームで行いました。
+        「おすすめの書籍を共有する」Webアプリの機能拡張とUI改善をチームで行いました。
         大阪のメンバーとリモートで連携し、実務と同様の「要件定義」「設計概要の作成」から実装までを担当しました。
     </p>
 
@@ -97,12 +109,36 @@
             書籍追加時の「タグ機能」や、エラー時の即時フィードバック（バリデーション）、削除前の確認モーダル表示など、ユーザーが迷わないUI/UXを追求しました [cite: 177, 183, 231]。
         </li>
     </ul>
-
-    <h4>工夫した点（チーム開発）</h4>
+    
+    <h4>データベース（MySQL）を用いた実装</h4>
     <p>
-        要件定義の段階で「どのような項目が必要か（タイトル、著者、出版日、タグ等）」を詳細に定義し、共通認識を持って開発を進めました。
-        限られた3日間という期間内で、リモート環境ながら円滑なコミュニケーションを取り、機能の実装を完遂させました。
+        データの永続化のためにMySQLを使用し、効率的なデータ操作を意識して実装しました。
     </p>
+    <ul>
+        <li>
+            <strong>高度なデータ抽出：</strong><br>
+            書籍名による絞り込み検索や、発売日の「新しい順・古い順」のソート機能を実装。SQLのクエリを意識し、大量のデータから必要な情報を正確に取得できるよう設計しました。
+        </li>
+        <li>
+            <strong>セキュリティに配慮したデータ管理：</strong><br>
+            Spring Securityを利用し、管理者パスワードをランダム生成した上でハッシュ化して保存。認証情報をメモリ上だけでなく、データベースと連携させて管理する基礎を学びました。
+        </li>
+    </ul>
+
+    <h4>チーム開発とコミュニケーションの重要性</h4>
+    <p>
+        3日間という限られた期間、かつリモート環境での開発を通じ、<strong>「素早く正確なコミュニケーション」</strong>がプロジェクトの成否を分けることを痛感しました。
+    </p>
+    <ul>
+        <li>
+            <strong>認識のズレを防ぐ要件定義：</strong><br>
+            実装に入る前に、タイトル、著者名、タグといった入力項目の文字制限やバリデーション（入力チェック）条件を細かく言語化し、チーム全員で共通認識を持ちました。
+        </li>
+        <li>
+            <strong>リモート環境でのスピード感：</strong><br>
+            対面ではないからこそ、進捗状況の共有や技術的な相談をチャットで即座に行い、詰まっている時間を最小限にするよう努めました。この素早い連携により、3日間という短期間で高品質なシステムを完遂できました。
+        </li>
+    </ul>
 
     </div>
 
