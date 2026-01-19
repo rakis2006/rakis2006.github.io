@@ -14,6 +14,8 @@ header{
 
 h1{
   color: #005bac;
+   margin-top: 10px;    /* 上の余白を10pxに（標準は約20〜30px） */
+    margin-bottom: 5px;  /* 下の余白を5pxに */
 }
 /* 全体設定：余白を含めて幅を計算するようにする */
 * {
