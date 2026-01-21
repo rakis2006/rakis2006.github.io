@@ -299,7 +299,7 @@
     <h4>プロジェクト概要</h4>
     <p>
         新しいプログラミング言語を学ぶ学習者のために、ネット上の開発者のリアルな声を収集・分析し、学習難易度を可視化するシステムです。
-        Google検索APIで収集したネット上の開発者の生のテキスト情報を、Gemini APIに渡して多角的に分析させる「APIマッシュアップ」を実装しました。
+        Google検索APIで収集したネット上の開発者の生の情報を、Gemini APIに渡して多角的に分析させる「APIマッシュアップ」を実装しました。
     </p>
 
     <h4>技術的な工夫点（データエンジニアリング）</h4>
@@ -332,39 +332,53 @@
         収集したデータをどう見せるかというUXの観点に加え、今後は「市場価値（年収）」などの外部データとさらに連携させ、技術を社会的なニーズと結びつけて考える「サービス開発の視点」を得ることができました。
     </p>
 </div>
-          <div class="work-card">
-            <h3>グラビティ・ランナー</h3>
-            <p>ゲーム作成</p>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 10px 0;">
-                <iframe 
-                    src="https://www.youtube.com/embed/2GETJfMPjPg?si=81WujTnSy2hGPJKI" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
-                </iframe>
-            </div>
-            <p><strong>工夫した点：</strong>TypeScriptを使った開発をしました</p>
-          </div>
+        <div class="work-card">
+    <h3>グラビティ・ランナー </h3>
+    <p><strong>制作時期：</strong>2026年 1月（大学2年次 感性情報イメージング最終課題）</p>
+    <p><strong>使用技術：</strong>TypeScript,HTML,CSS</p>
 
-          <div class="work-card">
-            <h3>Todo日記アプリ</h3>
-            <p>授業の中のイベントコンポーネント使用</p>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 10px 0;">
-                <iframe 
-                    src="https://www.youtube.com/embed/XfoLxFt7e54?si=LSxCXLJBWUdPndzh" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
-                </iframe>
-            </div>
-            <p><strong>工夫した点：</strong>イベントコンポーネントを使った開発をしました</p>
-          </div>
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 10px 0;">
+        <iframe 
+            src="https://www.youtube.com/embed/2GETJfMPjPg?si=81WujTnSy2hGPJKI" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
+        </iframe>
+    </div>
+
+    <h4>プロジェクト概要</h4>
+    <p>
+        重力を反転させて障害物を避けるランアクションゲームです。「20秒間耐えて女王を救い出す」という明確な目標に対し、難易度が時間が経つごとに上昇する仕組みを実装しました。
+        初めてのTypeScriptを用いた開発で、実際にWebサイトとして公開可能な形まで構築しました。
+    </p>
+
+    <h4>技術的な工夫点（設計と実装）</h4>
+    <ul>
+        <li>
+            <strong>オブジェクト指向による継承設計：</strong><br>
+            抽象クラス<code>GameObject</code>を定義し、プレイヤーや障害物へ機能を継承させる設計を行いました。これにより、当たり判定（AABB法）や更新処理の共通化を実現し、拡張性の高いコード構造にしました。
+        </li>
+        <li>
+            <strong>独立した物理エンジン（PhysicsWorld）：</strong><br>
+            重力の状態を管理する専用クラスを作成。単なる「上下移動」ではなく、加速度を用いた物理演算を行うことで、重力反転時の「浮遊感」や「着地」の滑らかさを追求しました。
+        </li>
+        <li>
+            <strong>感性を刺激するゲームデザイン：</strong><br>
+            経過時間に合わせて背景色が変化し、障害物のスピードが上昇する「緊張感の演出」を実装。スペースキーによる空中静止（線形補間を用いた座標計算）など、操作の楽しさを数学的に計算して実装しました。
+        </li>
+        <li>
+            <strong>永続的なユーザー体験：</strong><br>
+            Web Storage APIを利用し、ブラウザを閉じてもハイスコアが保持される機能を搭載。単発のプログラムではなく、一つの「プロダクト」としての完成度を目指しました。
+        </li>
+    </ul>
+
+    <h4>この課題で得たもの</h4>
+    <p>
+        <strong>未知の技術に対する「自走力」の獲得：</strong><br>
+        初めてのTypeScriptに挑戦する際、単にコードを書き写すのではなく、「なぜここでエラーが出るのか」「JavaScriptと何が違うのか」という背後にある法則性を探ることを大切にしました。最初は厳格な型定義に苦戦しましたが、公式ドキュメントを読み解きながらその意図を理解することで、中盤からは言語の特性を味方につけたスムーズな開発ができるようになりました。この経験を通じて、未知の言語であっても自ら学び、使いこなしていく「自走力」に大きな自信がつきました。
+    </p>
+</div>
 
           <div class="work-card">
             <h3>Todo日記アプリ</h3>
